@@ -15,6 +15,10 @@ classdef stack < handle
         
         function push(this, value)
             % Push an item to the top of the stack.
+            if isnan(value)
+                error('Value cannot be NaN');
+            end
+            
             if this.head.isTerminal()
                 this.head = node(value, NaN);
             else
