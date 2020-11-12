@@ -75,8 +75,13 @@ classdef priorityQueue < handle
         end
         
         function val = peek(this)
-            % Return first element in queue without removing it.
-            val = this.heap(1);
+            % Return value of first element in queue without removing it.
+            val = this.heap(1).value;
+        end
+        
+        function val = peekPriority(this)
+            % Return priority of first elem in queue without removing it.
+            val = this.heap(1).priority;
         end
         
         function val = getSize(this)
