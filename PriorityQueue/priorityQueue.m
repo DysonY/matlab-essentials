@@ -41,7 +41,7 @@ classdef priorityQueue < handle
             if this.size == 0
                 error('Cannot dequeue an empty queue');
             end
-            output = this.heap(1);
+            output = this.heap(1).value;
             
             % Bubble down to regain heap property.
             item = this.heap(this.size);
