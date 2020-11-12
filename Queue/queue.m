@@ -60,11 +60,7 @@ classdef queue < handle
         
         function val = isEmpty(this)
             % Test whether queue is empty.
-            if this.size == 0
-                val = 1;
-            else
-                val = 0;
-            end
+            val = (this.size == 0);
         end
         
         function val = getSize(this)
