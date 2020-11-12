@@ -1,0 +1,42 @@
+classdef queue < handle
+    %UNTITLED Summary of this class goes here
+    %   Detailed explanation goes here
+    
+    properties
+        head
+        tail
+    end
+    
+    methods
+        function this = queue()
+            % Constructor.
+            this.head = node(NaN, NaN);
+            this.tail = this.head;
+        end
+        
+        function enqueue(this, value)
+            % Enqueue element at back of queue.
+            if this.tail.isTerminal()
+                this.tail = node(value, NaN);
+                this.head = this.tail;
+            else
+                this.tail.next = node(value, NaN);
+                this.tail = this.tail.next;
+            end
+        end
+        
+        function frontItem = dequeue(this)
+            % Dequeue element from front of queue.
+            if this.head.isTerminal()
+                error('Cannot dequeue an empty queue');
+            end
+            frontItem = this.head.value;
+            if ~
+            this.head = this.head.next;
+            if this.head.isTerminal()
+                this.tail = node(NaN, NaN);
+            end
+        end
+    end
+end
+
