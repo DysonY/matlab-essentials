@@ -12,6 +12,7 @@ classdef queue < handle
             % Constructor.
             this.head = node(NaN, NaN);
             this.tail = this.head;
+            this.size = 0;
         end
         
         function enqueue(this, value)
@@ -59,12 +60,28 @@ classdef queue < handle
         
         function val = isEmpty(this)
             % Test whether queue is empty.
-            val = (this.size == 0);
+            if this.size == 0
+                val = 1;
+            else
+                val = 0;
+            end
         end
         
         function val = getSize(this)
             % Return number of items in queue.
             val = this.size;
+        end
+        
+        function print(this)
+            if this.size == 0
+                error('Cannot print empty queue');
+            end
+            
+            move = this.head;
+            for i = 0:(this.size - 1)
+                disp(move.value)
+                move = move.next;
+            end
         end
     end
 end
