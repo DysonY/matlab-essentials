@@ -12,6 +12,34 @@ isEmpty | Tests whether stack is empty | O(1)
 getSize | Returns number of items in stack | O(1)
 print | Prints contents of stack | O(n)
 
+Example:
+```MATLAB
+% Create instance of stack
+s = stack
+
+% Push items
+s.push(1)
+s.push(2)
+s.push(3)
+
+% Confirm that stack has 3 elements
+assert(s.getSize == 3)
+
+% Confirm that top of stack is equal to 3
+assert(s.peek == 3)
+
+% Print contents of stack
+s.print
+
+% Pop items
+s.pop
+s.pop
+s.pop
+
+% Confirm that stack is empty
+assert(s.isEmpty)
+```
+
 ## Queue
 The Queue is a FIFO data structure, i.e. elements which are added first are the first to be removed. It is implemented using a singly-linked list. It supports the following methods:
 Methods | Description | Time Complexity
