@@ -31,7 +31,7 @@ assert(s.peek == 3)
 % Print contents of stack
 s.print
 
-% Pop items
+% Pop all items
 s.pop
 s.pop
 s.pop
@@ -52,6 +52,36 @@ isEmpty | Tests whether queue is empty | O(1)
 getSize | Returns number of items in stack | O(1)
 print | Prints contents of queue | O(n)
 
+Example:
+```MATLAB
+% Create instance of stack
+q = queue
+
+% Enqueue items
+q.enqueue(1)
+q.enqueue(2)
+q.enqueue(3)
+
+% Confirm that queue has 3 elements
+assert(q.getSize == 3)
+
+% Confirm that front of queue is equal to 1
+% and back of queue is equal to 3
+assert(q.peekFront == 1)
+assert(q.peekBack == 1)
+
+% Print contents of queue
+q.print
+
+% Dequeue all items
+q.dequeue
+q.dequeue
+q.dequeue
+
+% Confirm that queue is empty
+assert(q.isEmpty)
+```
+
 ## Priority Queue
 The Priority Queue is a structure where elements with the highest priority are the first to be removed. It is implemented using a binary max-heap. It supports the following methods:
 Methods | Description | Time Complexity
@@ -65,3 +95,8 @@ getSize | Returns number of elements in queue | O(1)
 print (TODO) | Prints contents of queue | O(?)
 
 ## Tuple
+The tuple is an ordered sequence of elements. It is implemented using a hash map. It supports the following methods:
+Methods | Description | Time Complexity
+------- | ----------- | ---------------
+get(idx) | Returns the element at index idx (index starting at 1) | O(1)
+set(idx, val) | Sets the element at index idx (index starting at 1) to be val | O(1)
