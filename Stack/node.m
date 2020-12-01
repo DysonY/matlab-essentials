@@ -20,8 +20,6 @@ classdef node < handle
         
         function val = isTerminal(this)
             % Return true if node is terminal (value and next both NaN)
-            disp(this.value)
-            disp(this.next)
             val = isnan(this.value);
         end
     end

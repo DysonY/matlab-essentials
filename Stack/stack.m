@@ -62,7 +62,6 @@ classdef stack < handle
             move = this.head;
             for i = 0:(this.size - 1)
                 disp(move.value)
-                disp(this.head)
                 move = move.next;
             end
         end
